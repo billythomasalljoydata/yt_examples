@@ -1,11 +1,17 @@
+--This assumes you do NOT have a dbo.Sales table in your database 
 
 CREATE TABLE [dbo].[Sales](
 	[Name] [nvarchar](50) NULL,
 	[State] [nvarchar](50) NULL,
 	[Sales] [money] NULL,
-	[id] [int] IDENTITY(1,1) NOT NULL
+	[id] [int] IDENTITY(1,1) NOT NULL,
+ CONSTRAINT [PK_Sales] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
+
 
 
 INSERT INTO [dbo].[Sales](Name, State, Sales)
@@ -24,6 +30,8 @@ VALUES
 ('SALLY','FL',102),
 ('JIM','SC',95),
 ('JIM','SC',100)
+
+
 GO
 
 
