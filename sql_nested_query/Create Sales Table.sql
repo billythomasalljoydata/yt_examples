@@ -30,8 +30,6 @@ VALUES
 ('SALLY','FL',102),
 ('JIM','SC',95),
 ('JIM','SC',100)
-
-
 GO
 
 
